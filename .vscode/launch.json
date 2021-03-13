@@ -12,9 +12,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/build/sparkfun_promicro16/firmware.elf",
+            "executable": "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/build/sparkfun_promicro16/firmware.elf",
             "projectEnvName": "sparkfun_promicro16",
-            "toolchainBinDir": "C:/Users/Arppa/.platformio/packages/toolchain-atmelavr/bin",
+            "toolchainBinDir": "C:/Users/aoina/.platformio/packages/toolchain-atmelavr/bin",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -25,9 +25,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/build/sparkfun_promicro16/firmware.elf",
+            "executable": "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/build/sparkfun_promicro16/firmware.elf",
             "projectEnvName": "sparkfun_promicro16",
-            "toolchainBinDir": "C:/Users/Arppa/.platformio/packages/toolchain-atmelavr/bin",
+            "toolchainBinDir": "C:/Users/aoina/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]

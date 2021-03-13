@@ -1,45 +1,45 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
 {
     "configurations": [
         {
-            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
-        },
-        {
-            "name": "Win32",
+            "name": "PlatformIO",
             "includePath": [
-                "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/include",
-                "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/src",
-                "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder",
-                "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/cores/arduino",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/variants/sparkfun_promicro",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                "C:/Users/Arppa/.platformio/packages/tool-unity",
+                "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/include",
+                "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/src",
+                "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder/src",
+                "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/variants/sparkfun_promicro",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/include",
-                    "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/src",
-                    "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder",
-                    "c:/Users/Arppa/personal-git-repos/smart_rotary_button_box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/cores/arduino",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/variants/sparkfun_promicro",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                    "C:/Users/Arppa/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
-                    "C:/Users/Arppa/.platformio/packages/tool-unity",
+                    "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/include",
+                    "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/src",
+                    "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder/src",
+                    "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/variants/sparkfun_promicro",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/aoina/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     ""
                 ]
             },
             "defines": [
-                "PLATFORMIO=50003",
+                "PLATFORMIO=50100",
                 "ARDUINO_AVR_PROMICRO16",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
@@ -51,10 +51,9 @@
                 "__AVR_ATmega32U4__",
                 ""
             ],
-            "intelliSenseMode": "gcc-x64",
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "compilerPath": "C:/Users/Arppa/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerPath": "C:/Users/aoina/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
             "compilerArgs": [
                 "-mmcu=atmega32u4",
                 ""
