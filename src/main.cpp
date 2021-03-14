@@ -2,6 +2,7 @@
 //#include <Keyboard.h>
 #include <Joystick.h>
 #include "CustomRotaryEncoder.h"
+#include "button_press_queue.h"
 
 /*
 // Leonardo
@@ -49,6 +50,8 @@ Joystick_ Joystick( JOYSTICK_DEFAULT_REPORT_ID,
                     false
                     );
 
+ButtonPressQueue buttonPressQueue(&Joystick);
+
 int getEncoderCount()
 {
     return sizeof(encoders)/sizeof(encoders[0]);
@@ -57,6 +60,8 @@ int getEncoderCount()
 MODE mode = NOT_DEFINED;
 unsigned long previousStatusTime = 0;
 int statusInterval = 30 * 1000; // Every 10 seconds
+
+unsigned long _logMillis = 0;
 
 // the setup function runs once when you press reset or power the board
 void setup()
@@ -73,6 +78,7 @@ void setup()
     Serial.begin(57600);
     Joystick.begin(true);
     
+    _logMillis = millis();
 }
 
 void printStatus()
@@ -105,8 +111,10 @@ void setMode(int newMode)
     }
 }
 
-void setEncoderDirections()
+bool setEncoderDirections()
 {
+    bool encoderPositionChanged = false;
+
     for (int i = 0; i < getEncoderCount(); i++)
     {
         encoders[i].tick();
@@ -117,12 +125,9 @@ void setEncoderDirections()
         {
             ENCODER_ACTION action = direction == RotaryEncoder::Direction::CLOCKWISE ? ENCODER_ACTION::INCREASE : ENCODER_ACTION::DECREASE;
             uint8_t button = encoders[i].getButtonIndex(mode == SIM, action);
-            Joystick.pressButton(button);
-            delay(10);
-            Joystick.releaseButton(button);
-
-            Serial.print("Encoder action: ");
-            Serial.println(action);
+            
+            buttonPressQueue.queueButtonPress(button);
+            encoderPositionChanged |= true;
         }
 
         if (  encoders[i].getStateChanged() )
@@ -130,19 +135,30 @@ void setEncoderDirections()
             uint8_t button = encoders[i].getButtonIndex(mode == SIM, ENCODER_ACTION::CLICK);
             if (  encoders[i].getIsPressed() )
             {
-                //executeClickFunction(i);
+                Serial.print("Pressing encoder button ");
                 Joystick.pressButton(button);
             }
             else
+            {
+                Serial.print("Releasing encoder button ");
                 Joystick.releaseButton(button);
+            }
         }
+
             
     }
+
+    return encoderPositionChanged;
 }
+
+
+unsigned long _loopCounter = 0;
+unsigned long _processQueusMillis = 0;
 
 // the loop function runs over and over again forever
 void loop()
 {
+    
 
     setMode(digitalRead(PIN_MODE_SWITCH));
     
@@ -157,10 +173,44 @@ void loop()
 
         uint8_t joyBtn = mode == MODE::SIM ? joystickButtonIndex_Sim_Back : joystickButtonIndex_System_Back;
         if ( backButtonState == HIGH )
+        {
+            Serial.print("Pressing back button ");
             Joystick.pressButton(joyBtn);
+        }
         else
+        {
+            Serial.print("Releasing back button ");
             Joystick.releaseButton(joyBtn);
+        }
     }
+
+    // If encoder value was red, skip processing the queue and wait for more inputs
+    //if (!encoderRead)
+    //    buttonPressQueue.processQueue();
+
+    // TODO: Calculate average loop time
+    
+    // Process queue seldom
+    if (millis() - _processQueusMillis > 100)
+    {
+        buttonPressQueue.processQueue();
+        _processQueusMillis = millis();
+    }
+
+    if (millis() - _logMillis > 15000)
+    {
+        Serial.print("Loop count: ");
+        Serial.println(_loopCounter);
+        Serial.print("Avg loop time in ms: ");
+        Serial.println( (millis() - _logMillis) / _loopCounter );
+
+        _logMillis = millis();
+        _loopCounter = 0;
+    }
+
+    _loopCounter++;
+    delay(1);
+
 }
 
 

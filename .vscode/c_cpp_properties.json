@@ -10,6 +10,7 @@
             "includePath": [
                 "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/include",
                 "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/src",
+                "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Vector/src",
                 "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder/src",
                 "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
                 "C:/Users/aoina/.platformio/packages/framework-arduino-avr/cores/arduino",
@@ -26,6 +27,7 @@
                 "path": [
                     "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/include",
                     "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/src",
+                    "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Vector/src",
                     "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/RotaryEncoder/src",
                     "c:/Users/aoina/personal-git-repos/smart-rotary-button-box/.pio/libdeps/sparkfun_promicro16/Joystick/src",
                     "C:/Users/aoina/.platformio/packages/framework-arduino-avr/cores/arduino",
