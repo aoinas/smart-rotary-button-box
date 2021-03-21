@@ -75,7 +75,7 @@ void setup()
     pinMode(14, INPUT); // Encoder clicks // TODO: move to CustomRotaryEncoder
     pinMode(10, INPUT); // Encoder clicks // TODO: move to CustomRotaryEncoder
 
-    Serial.begin(57600);
+    Serial.begin(9600);
     Joystick.begin(true);
     
     _logMillis = millis();
