@@ -101,7 +101,7 @@ void setMode(int newMode)
 {
     if (mode != newMode)
     {
-        mode = newMode == SIM ? SIM : SYSTEM;
+        mode = (MODE)newMode;
 
         // Release buttons
         Joystick.releaseButton(joystickButtonIndex_Sim_Back);
@@ -144,8 +144,6 @@ bool setEncoderDirections()
                 Joystick.releaseButton(button);
             }
         }
-
-            
     }
 
     return encoderPositionChanged;
@@ -158,8 +156,6 @@ unsigned long _processQueusMillis = 0;
 // the loop function runs over and over again forever
 void loop()
 {
-    
-
     setMode(digitalRead(PIN_MODE_SWITCH));
     
     setEncoderDirections();
@@ -184,14 +180,8 @@ void loop()
         }
     }
 
-    // If encoder value was red, skip processing the queue and wait for more inputs
-    //if (!encoderRead)
-    //    buttonPressQueue.processQueue();
-
-    // TODO: Calculate average loop time
-    
-    // Process queue seldom
-    if (millis() - _processQueusMillis > 100)
+    // Process queue 10 times a second
+    if (millis() - _processQueusMillis > 10)
     {
         buttonPressQueue.processQueue();
         _processQueusMillis = millis();
@@ -209,8 +199,7 @@ void loop()
     }
 
     _loopCounter++;
-    delay(1);
-
+    
 }
 
 
